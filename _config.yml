@@ -1,0 +1,30 @@
+title: Feature engineering
+author: Jan Kirenz
+logo: logo.png
+
+execute:
+  execute_notebooks: cache
+
+latex:
+  latex_documents:
+    targetname: book.tex
+
+bibtex_bibfiles:
+   - _bibliography/references.bib
+
+repository:
+  url: https://kirenz.github.io/feature-engineering/  
+  path_to_book: docs 
+  branch: main  
+
+html:
+  use_issues_button: true
+  use_repository_button: true
+
+sphinx:
+  config:
+    bibtex_reference_style: author_year
+
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
+  binderhub_url: ""
