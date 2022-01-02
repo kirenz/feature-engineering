@@ -1,6 +1,6 @@
 # Welcome
 
-The goal of this book is to give you an overview about some important data engineering tools and concepts when doing data science projects in Python.
+The goal of this book is to give you an overview about some important feature engineering tools and concepts when doing data science projects in Python.
 
 A typical data science project looks something like this: 
 
@@ -11,7 +11,7 @@ A typical data science project looks something like this:
 :align: center
 ```
 
-Here, we mainly cover the topics of feature engineering, feature selection and cross-validation. 
+Here, we mainly cover the topics of feature engineering, feature selection and cross-validation.
 
 ---
 
