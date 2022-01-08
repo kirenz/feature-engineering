@@ -432,7 +432,7 @@ memory usage: 41.2 KB
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Features selected by SelectFromModel: Index([&#39;Hits&#39;, &#39;CRuns&#39;], dtype=&#39;object&#39;)
-Done in 0.155s
+Done in 0.159s
 </pre></div>
 </div>
 </div>
@@ -474,7 +474,7 @@ Done in 0.155s
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Features selected by forward sequential selection: Index([&#39;Hits&#39;, &#39;CRBI&#39;], dtype=&#39;object&#39;)
-Done in 8.538s
+Done in 7.829s
 </pre></div>
 </div>
 </div>
@@ -497,25 +497,11 @@ Done in 8.538s
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
-    <span class="s2">&quot;Features selected by backward sequential selection: &quot;</span>
-    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">feature_names</span><span class="p">[</span><span class="n">sfs_backward</span><span class="o">.</span><span class="n">get_support</span><span class="p">()]</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Done in </span><span class="si">{</span><span class="n">toc_bwd</span> <span class="o">-</span> <span class="n">tic_bwd</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">35</span><span class="o">/</span><span class="mi">43</span><span class="n">bdsj9j64j16410rds5g9vr0000gp</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_18418</span><span class="o">/</span><span class="mf">3086339423.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="s2">&quot;Features selected by backward sequential selection: &quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">feature_names</span><span class="p">[</span><span class="n">sfs_backward</span><span class="o">.</span><span class="n">get_support</span><span class="p">()]</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Done in </span><span class="si">{</span><span class="n">toc_bwd</span> <span class="o">-</span> <span class="n">tic_bwd</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;sfs_backward&#39; is not defined
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#print(</span>
+<span class="c1">#    &quot;Features selected by backward sequential selection: &quot;</span>
+<span class="c1">#    f&quot;{feature_names[sfs_backward.get_support()]}&quot;</span>
+<span class="c1">#)</span>
+<span class="c1">#print(f&quot;Done in {toc_bwd - tic_bwd:.3f}s&quot;)</span>
 </pre></div>
 </div>
 </div>
