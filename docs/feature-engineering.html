@@ -439,7 +439,7 @@ memory usage: 41.2 KB
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Features selected by SelectFromModel: Index([&#39;Hits&#39;, &#39;CRuns&#39;], dtype=&#39;object&#39;)
-Done in 0.117s
+Done in 0.120s
 </pre></div>
 </div>
 </div>
@@ -481,7 +481,7 @@ Done in 0.117s
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Features selected by forward sequential selection: Index([&#39;Hits&#39;, &#39;CRBI&#39;], dtype=&#39;object&#39;)
-Done in 5.900s
+Done in 6.109s
 </pre></div>
 </div>
 </div>
@@ -504,7 +504,7 @@ Done in 5.900s
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">9</span><span class="n">c</span><span class="o">/</span><span class="n">_3s5jt3n60j__flsgl0t72340000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_4416</span><span class="o">/</span><span class="mf">3071182743.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">9</span><span class="n">c</span><span class="o">/</span><span class="n">_3s5jt3n60j__flsgl0t72340000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_5032</span><span class="o">/</span><span class="mf">3071182743.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">tic_bwd</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> 
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">sfs_backward</span> <span class="o">=</span> <span class="n">SequentialFeatureSelector</span><span class="p">(</span>
@@ -680,29 +680,11 @@ Done in 5.900s
 <span class="g g-Whitespace">    </span><span class="mi">351</span><span class="s2">         y,</span>
 
 <span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/sklearn/linear_model/_coordinate_descent.py</span> in <span class="ni">enet_path</span><span class="nt">(X, y, l1_ratio, eps, n_alphas, alphas, precompute, Xy, copy_X, coef_init, verbose, return_n_iter, positive, check_input, **params)</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span><span class="s2">     n_iters = []</span>
-<span class="g g-Whitespace">    </span><span class="mi">588</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">589</span><span class="s2">     rng = check_random_state(random_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">590</span><span class="s2">     if selection not in [&quot;random&quot;, &quot;cyclic&quot;]:</span>
-<span class="g g-Whitespace">    </span><span class="mi">591</span><span class="s2">         raise ValueError(&quot;selection should be either random or cyclic.&quot;)</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/sklearn/utils/validation.py</span> in <span class="ni">check_random_state</span><span class="nt">(seed)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1041</span><span class="s2">         return np.random.mtrand._rand</span>
-<span class="g g-Whitespace">   </span><span class="mi">1042</span><span class="s2">     if isinstance(seed, numbers.Integral):</span>
-<span class="ne">-&gt; </span><span class="mi">1043</span><span class="s2">         return np.random.RandomState(seed)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1044</span><span class="s2">     if isinstance(seed, np.random.RandomState):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1045</span><span class="s2">         return seed</span>
-
-<span class="nn">mtrand.pyx</span> in <span class="ni">numpy.random.mtrand.RandomState.__init__</span><span class="nt">()</span>
-
-<span class="nn">_mt19937.pyx</span> in <span class="ni">numpy.random._mt19937.MT19937.__init__</span><span class="nt">()</span>
-
-<span class="nn">~/opt/anaconda3/lib/python3.8/contextlib.py</span> in <span class="ni">inner</span><span class="nt">(*args, **kwds)</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span><span class="s2">         def inner(*args, **kwds):</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="s2">             with self._recreate_cm():</span>
-<span class="ne">---&gt; </span><span class="mi">75</span><span class="s2">                 return func(*args, **kwds)</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span><span class="s2">         return inner</span>
-<span class="g g-Whitespace">     </span><span class="mi">77</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span><span class="s2">             if check_input:</span>
+<span class="g g-Whitespace">    </span><span class="mi">632</span><span class="s2">                 precompute = check_array(precompute, dtype=X.dtype.type, order=&quot;C&quot;)</span>
+<span class="ne">--&gt; </span><span class="mi">633</span><span class="s2">             model = cd_fast.enet_coordinate_descent_gram(</span>
+<span class="g g-Whitespace">    </span><span class="mi">634</span><span class="s2">                 coef_,</span>
+<span class="g g-Whitespace">    </span><span class="mi">635</span><span class="s2">                 l1_reg,</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
