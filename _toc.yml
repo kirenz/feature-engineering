@@ -3,10 +3,10 @@ root: docs/intro.md
 parts:
   - caption: Feature engineering
     chapters:
-    - file: docs/feature-selection.ipynb
-  - caption: Cross validation 
-    chapters:
-    - file: docs/crossvalidation.ipynb
+    - file: docs/feature-engineering.ipynb
+  #- caption: Cross validation 
+  #  chapters:
+  #  - file: docs/crossvalidation.ipynb
   - caption: Feature selection
     chapters:
     - file: docs/feature-selection.ipynb
