@@ -177,11 +177,11 @@ print(f"Done in {toc_fwd - tic_fwd:.3f}s")
 # In[12]:
 
 
-print(
-    "Features selected by backward sequential selection: "
-    f"{feature_names[sfs_backward.get_support()]}"
-)
-print(f"Done in {toc_bwd - tic_bwd:.3f}s")
+#print(
+#    "Features selected by backward sequential selection: "
+#    f"{feature_names[sfs_backward.get_support()]}"
+#)
+#print(f"Done in {toc_bwd - tic_bwd:.3f}s")
 
 
 # ## Discussion
