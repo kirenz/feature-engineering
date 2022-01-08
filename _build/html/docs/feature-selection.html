@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Bibliography" href="reference.html" />
-    <link rel="prev" title="Feature engineering" href="feature-engineering.html" />
+    <link rel="prev" title="Welcome" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -92,18 +92,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    Welcome
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  Feature engineering
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="feature-engineering.html">
-   Feature engineering
   </a>
  </li>
 </ul>
@@ -441,7 +429,7 @@ memory usage: 41.2 KB
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Features selected by SelectFromModel: Index([&#39;Hits&#39;, &#39;CRuns&#39;], dtype=&#39;object&#39;)
-Done in 0.116s
+Done in 0.117s
 </pre></div>
 </div>
 </div>
@@ -483,7 +471,7 @@ Done in 0.116s
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Features selected by forward sequential selection: Index([&#39;Hits&#39;, &#39;CRBI&#39;], dtype=&#39;object&#39;)
-Done in 5.777s
+Done in 5.758s
 </pre></div>
 </div>
 </div>
@@ -506,7 +494,7 @@ Done in 5.777s
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">9</span><span class="n">c</span><span class="o">/</span><span class="n">_3s5jt3n60j__flsgl0t72340000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_3311</span><span class="o">/</span><span class="mf">3071182743.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">9</span><span class="n">c</span><span class="o">/</span><span class="n">_3s5jt3n60j__flsgl0t72340000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_5286</span><span class="o">/</span><span class="mf">3071182743.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">tic_bwd</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> 
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">sfs_backward</span> <span class="o">=</span> <span class="n">SequentialFeatureSelector</span><span class="p">(</span>
@@ -612,11 +600,11 @@ Done in 5.777s
 <span class="g g-Whitespace">   </span><span class="mi">1673</span>             <span class="n">verbose</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
 
 <span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/joblib/parallel.py</span> in <span class="ni">__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1041</span>             <span class="c1"># remaining jobs.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1042</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_iterating</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="ne">-&gt; </span><span class="mi">1043</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dispatch_one_batch</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span>
 <span class="g g-Whitespace">   </span><span class="mi">1044</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_iterating</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_original_iterator</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
 <span class="g g-Whitespace">   </span><span class="mi">1045</span> 
-<span class="ne">-&gt; </span><span class="mi">1046</span>             <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">dispatch_one_batch</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1047</span>                 <span class="k">pass</span>
-<span class="g g-Whitespace">   </span><span class="mi">1048</span> 
 
 <span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/joblib/parallel.py</span> in <span class="ni">dispatch_one_batch</span><span class="nt">(self, iterator)</span>
 <span class="g g-Whitespace">    </span><span class="mi">859</span>                 <span class="k">return</span> <span class="kc">False</span>
@@ -705,7 +693,7 @@ Done in 5.777s
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Features selected by backward sequential selection: Index([&#39;Walks&#39;, &#39;CRuns&#39;], dtype=&#39;object&#39;)
-Done in 57.023s
+Done in 56.948s
 </pre></div>
 </div>
 </div>
@@ -754,11 +742,11 @@ Done in 57.023s
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="feature-engineering.html" title="previous page">
+        <a class="left-prev" href="intro.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Feature engineering</p>
+                <p class="prevnext-title">Welcome</p>
             </div>
         </a>
     </div>

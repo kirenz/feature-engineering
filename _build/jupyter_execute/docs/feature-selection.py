@@ -174,7 +174,7 @@ sfs_backward = SequentialFeatureSelector(
 toc_bwd = time()
 
 
-# In[12]:
+# In[24]:
 
 
 print(
