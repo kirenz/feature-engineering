@@ -165,16 +165,16 @@ print(f"Done in {toc_fwd - tic_fwd:.3f}s")
 # In[11]:
 
 
-tic_bwd = time()
+#tic_bwd = time()
 
-sfs_backward = SequentialFeatureSelector(
-    reg, n_features_to_select=2, 
-    direction="backward").fit(X_train, y_train)
+#sfs_backward = SequentialFeatureSelector(
+#    reg, n_features_to_select=2, 
+#    direction="backward").fit(X_train, y_train)
 
-toc_bwd = time()
+#toc_bwd = time()
 
 
-# In[24]:
+# In[12]:
 
 
 print(
