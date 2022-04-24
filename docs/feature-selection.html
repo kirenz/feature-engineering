@@ -371,14 +371,33 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># import data</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/kirenz/datasets/master/hitters-clean.csv&quot;</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 263 entries, 0 to 262
+Data columns (total 20 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   AtBat        263 non-null    float64
+ 1   Hits         263 non-null    float64
+ 2   HmRun        263 non-null    float64
+ 3   Runs         263 non-null    float64
+ 4   RBI          263 non-null    float64
+ 5   Walks        263 non-null    float64
+ 6   Years        263 non-null    float64
+ 7   CAtBat       263 non-null    float64
+ 8   CHits        263 non-null    float64
+ 9   CHmRun       263 non-null    float64
+ 10  CRuns        263 non-null    float64
+ 11  CRBI         263 non-null    float64
+ 12  CWalks       263 non-null    float64
+ 13  PutOuts      263 non-null    float64
+ 14  Assists      263 non-null    float64
+ 15  Errors       263 non-null    float64
+ 16  Salary       263 non-null    float64
+ 17  League_N     263 non-null    int64  
+ 18  Division_W   263 non-null    int64  
+ 19  NewLeague_N  263 non-null    int64  
+dtypes: float64(17), int64(3)
+memory usage: 41.2 KB
 </pre></div>
 </div>
 </div>
@@ -443,7 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.3441244939374593
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.3441244939374584
 </pre></div>
 </div>
 </div>
@@ -498,7 +517,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Features selected by SelectFromModel: Index([&#39;Hits&#39;, &#39;CRuns&#39;], dtype=&#39;object&#39;)
-Done in 0.124s
+Done in 0.180s
 </pre></div>
 </div>
 </div>
@@ -540,7 +559,7 @@ Done in 0.124s
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Features selected by forward sequential selection: Index([&#39;Hits&#39;, &#39;CRBI&#39;], dtype=&#39;object&#39;)
-Done in 5.922s
+Done in 11.238s
 </pre></div>
 </div>
 </div>
@@ -568,12 +587,6 @@ Done in 5.922s
 <span class="c1">#    f&quot;{feature_names[sfs_backward.get_support()]}&quot;</span>
 <span class="c1">#)</span>
 <span class="c1">#print(f&quot;Done in {toc_bwd - tic_bwd:.3f}s&quot;)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Features selected by backward sequential selection: Index([&#39;Walks&#39;, &#39;CRuns&#39;], dtype=&#39;object&#39;)
-Done in 56.948s
 </pre></div>
 </div>
 </div>
