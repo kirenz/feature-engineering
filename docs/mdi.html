@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -258,41 +256,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="https://kirenz.github.io/regression/docs/gradientboosting.html">Gradient Tree Boosting with scikit learn</a></p></li>
 <li><p><a class="reference external" href="https://kirenz.github.io/regression/docs/gradientboosting-xgboost.html#gradient-boosting-with-xgboost">Gradient Tree Boosting with XGBoost</a></p></li>
 <li><p><a class="reference external" href="https://scikit-learn.org/stable/auto_examples/inspection/plot_permutation_importance.html">Scikit-learn developers: Permutation Importance vs Random Forest Feature Importance (MDI)</a></p></li>
-</ul>
-</div>
-<p>Content: importance based feature selection; Forward selection and backward selection.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Feature selection  is the process of selecting a subset of relevant features (variables, predictors) for our model.</p>
-</div>
-<p>Supervised feature selection (also known as variable selection, attribute selection, variable subset selection and model subset selection) methods fall into three general classes <span id="id1">[<a class="reference internal" href="reference.html#id5" title="Max Kuhn and Kjell Johnson. Feature engineering and selection: A practical approach for predictive models. CRC Press, 2019. URL: http://www.feat.engineering/.">Kuhn and Johnson, 2019</a>]</span>:</p>
-<ol class="simple">
-<li><p>Embedded (or implicit) methods</p></li>
-<li><p>Filter methods</p></li>
-<li><p>Wrapper methods</p></li>
-</ol>
-<p><strong>Embedded methods</strong> perform feature selection during the modeling process (like regularization models or tree based models).</p>
-<p><strong>Filter methods</strong> conduct an analysis of the predictors to determine which are important and then only provide these to the model. E.g. based on statistical significance, correlation coefficent scores or feature importance based on magnitude of coefficients.</p>
-<p><strong>Wrapper methods</strong> use iterative search procedures that repeatedly supply predictor subsets to the model and then use the resulting model performance estimate to guide the selection of the next subset to evaluate. Typical performance measures are mean squared error, Mallow’s <span class="math notranslate nohighlight">\(C_P\)</span>, Akaike information criterion (AIC), Bayesian information criterion (BIC) (also called Schwarz information criterion SIC, SBC, SBIC) and adjusted <span class="math notranslate nohighlight">\(R^2\)</span>.</p>
-<p>An example of <a class="reference external" href="https://en.wikipedia.org/wiki/Greedy_algorithm">greedy</a> wrapper methods are forward and backward selection:</p>
-<ul class="simple">
-<li><p>Forward selection: That is, we start with 0 features and choose the best single feature with the highest score. The procedure is repeated until we reach the desired number of selected features.</p></li>
-<li><p>Backward selection: start with all the features and choose features to remove one by one.</p></li>
-</ul>
-<p>Examples of non-greedy wrapper methods are <a class="reference external" href="http://www.feat.engineering/genetic-algorithms.html">genetic algorithms (GA)</a> and <a class="reference external" href="http://www.feat.engineering/simulated-annealing.html">simulated annealing (SA)</a>.</p>
-<hr class="docutils" />
-<p>In the following Python notebook, we cover these methods to select features for a model:</p>
-<ul class="simple">
-<li><p>Embedded method: Lasso regression (L1 regularization)</p></li>
-<li><p>Filter method: Based on coefficient importance.</p></li>
-<li><p>Wrapper methods: Forward and backward selection.</p></li>
-</ul>
-<div class="tip admonition">
-<p class="admonition-title">Resources</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://kirenz.github.io/regression/docs/feature-selection.html">Python notebook: feature selection methods</a></p></li>
-<li><p><a class="reference external" href="https://drive.google.com/file/d/154JFUOqukNgZThS_ql-ptATY4KEP3edR/view?usp=sharing">Download slides</a></p></li>
-<li><p>Literature: <a class="reference external" href="http://www.feat.engineering/selection.html">Kuhn, M. &amp; Johnson, K. (2019): Feature Engineering and Selection: A Practical Approach for Predictive Models.</a></p></li>
 </ul>
 </div>
 </div>
