@@ -10,7 +10,7 @@ Permutation feature importance overcomes limitations of the impurity-based featu
 The permutation feature importance is defined to be the decrease in a model score when a single feature value is randomly shuffled. This procedure breaks the relationship between the feature and the target, thus the drop in the model score is indicative of how much the model depends on the feature. This technique benefits from being model agnostic and can be calculated many times with different permutations of the feature.
 
 ```{note}
-Permutation feature importance is a model inspection technique that can be used for any fitted estimator when the data is tabular (see [scikit learn](https://scikit-learn.org/stable/modules/permutation_importance.html#permutation-importance) for more details). 
+Permutation feature importance is a model inspection technique that can be used for any fitted estimator when the data is tabular (see [scikit learn](https://scikit-learn.org/stable/modules/permutation_importance.html#permutation-importance) for more details) 
 ```
 
  The permutation importance can be calculated on the training set to show how much the model relies on each feature during training. However, it can also be calculated on the test data to show the ability of a feature to be useful to make predictions that generalize to the test set.
