@@ -11,7 +11,7 @@ parts:
     chapters:
     - file: docs/feature-selection-overview.md  
     - file: docs/feature-selection.ipynb
-   - caption: Feature importance
+  - caption: Feature importance
     chapters:
     - file: docs/mdi.md  
     - file: docs/permutation-feature-importance.md
