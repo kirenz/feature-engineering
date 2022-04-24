@@ -1,7 +1,7 @@
 (section-permutation-feature-importance)=
 # Permutation feature importance
 
-*The following content is based on tutorials provided by scikit-learn developers.*
+*The following content is based on tutorials provided by the scikit-learn developers.*
 
 Permutation feature importance overcomes limitations of the impurity-based feature importance ([scikit-learn developers](https://scikit-learn.org/stable/auto_examples/ensemble/plot_forest_importances.html)): 
   - they do not have a bias toward high-cardinality features
