@@ -9,8 +9,12 @@ parts:
   #  - file: docs/crossvalidation.ipynb
   - caption: Feature selection
     chapters:
-    - file: docs/feature-selection.md  
- #   - file: docs/feature-selection.ipynb
+    - file: docs/feature-selection-overview.md  
+    - file: docs/feature-selection.ipynb
+   - caption: Feature importance
+    chapters:
+    - file: docs/mdi.md  
+    - file: docs/permutation-feature-importance.md
   - caption: References
     chapters:
     - file: docs/reference.md
