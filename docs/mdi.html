@@ -248,9 +248,18 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="mean-decrease-in-impurity-mdi">
 <span id="section-mean-decrease"></span><h1>Mean decrease in impurity (MDI)<a class="headerlink" href="#mean-decrease-in-impurity-mdi" title="Permalink to this headline">¶</a></h1>
+<p><em>The following content is based on tutorials provided by the scikit-learn developers.</em></p>
 <p>Mean decrease in impurity (MDI) is a measure of feature importance for decision tree models. They are computed as the mean and standard deviation of accumulation of the impurity decrease within each tree.</p>
-<p>Note that impurity-based importances are computed on training set statistics and therefore do not reflect the ability of feature to be useful to make predictions that generalize to the test set (when the model has enough capacity).</p>
-<p>Also note that impurity-based importances are biased towards high cardinality features (i.e., features with many unique values). See Permutation feature importance as an alternative below.</p>
+<p>Note that impurity-based importances are computed on training set statistics and therefore do not reflect the ability of feature to be useful to make predictions that generalize to the test set (when the model has enough capacity). Also note that impurity-based importances are biased towards high cardinality features (i.e., features with many unique values).</p>
+<p>As an alternative to MDI, you may want to use <img alt="" src="../_images/permutation-feature-importance.md" />, which can be computed on a held out test set.</p>
+<div class="tip admonition">
+<p class="admonition-title">Resources</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://kirenz.github.io/regression/docs/gradientboosting.html">Gradient Tree Boosting with scikit learn</a></p></li>
+<li><p><a class="reference external" href="https://kirenz.github.io/regression/docs/gradientboosting-xgboost.html#gradient-boosting-with-xgboost">Gradient Tree Boosting with XGBoost</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/auto_examples/inspection/plot_permutation_importance.html">Scikit-learn developers: Permutation Importance vs Random Forest Feature Importance (MDI)</a></p></li>
+</ul>
+</div>
 <p>Content: importance based feature selection; Forward selection and backward selection.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

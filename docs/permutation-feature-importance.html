@@ -246,22 +246,23 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="permutation-feature-importance">
 <span id="section-permutation-feature-importance"></span><h1>Permutation feature importance<a class="headerlink" href="#permutation-feature-importance" title="Permalink to this headline">¶</a></h1>
-<p>Permutation feature importance overcomes limitations of the impurity-based feature importance (<a class="reference external" href="https://scikit-learn.org/stable/auto_examples/ensemble/plot_forest_importances.html">scikit learn</a>):</p>
+<p><em>The following content is based on tutorials provided by scikit-learn developers.</em></p>
+<p>Permutation feature importance overcomes limitations of the impurity-based feature importance (<a class="reference external" href="https://scikit-learn.org/stable/auto_examples/ensemble/plot_forest_importances.html">scikit-learn developers</a>):</p>
 <ul class="simple">
 <li><p>they do not have a bias toward high-cardinality features</p></li>
 <li><p>they can be computed on a left-out test set.</p></li>
 </ul>
+<p>The permutation feature importance is defined to be the decrease in a model score when a single feature value is randomly shuffled. This procedure breaks the relationship between the feature and the target, thus the drop in the model score is indicative of how much the model depends on the feature. This technique benefits from being model agnostic and can be calculated many times with different permutations of the feature.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is a model inspection technique that can be used for any fitted estimator when the data is tabular (see <a class="reference external" href="https://scikit-learn.org/stable/modules/permutation_importance.html#permutation-importance">scikit learn</a> for more details).</p>
+<p>Permutation feature importance is a model inspection technique that can be used for any fitted estimator when the data is tabular (see <a class="reference external" href="https://scikit-learn.org/stable/modules/permutation_importance.html#permutation-importance">scikit learn</a> for more details).</p>
 </div>
-<p>The permutation feature importance is defined to be the decrease in a model score when a single feature value is randomly shuffled. This procedure breaks the relationship between the feature and the target, thus the drop in the model score is indicative of how much the model depends on the feature.</p>
-<p>This technique benefits from being model agnostic and can be calculated many times with different permutations of the feature. The permutation importance is calculated on the training set to show how much the model relies on each feature during training.</p>
+<p>The permutation importance can be calculated on the training set to show how much the model relies on each feature during training. However, it can also be calculated on the test data to show the ability of a feature to be useful to make predictions that generalize to the test set.</p>
 <div class="tip admonition">
 <p class="admonition-title">Resources</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://kirenz.github.io/regression/docs/gradientboosting.html">Gradient Boosting with scikit learn</a></p></li>
-<li><p><span class="xref myst">Gradient Boosting with XGBoost</span></p></li>
+<li><p><a class="reference external" href="https://kirenz.github.io/regression/docs/gradientboosting.html">Gradient Tree Boosting with scikit learn</a></p></li>
+<li><p><a class="reference external" href="https://kirenz.github.io/regression/docs/gradientboosting-xgboost.html#gradient-boosting-with-xgboost">Gradient Tree Boosting with XGBoost</a></p></li>
 <li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/permutation_importance.html">Scikit-learn developers: Permutation feature importance</a></p></li>
 </ul>
 </div>
