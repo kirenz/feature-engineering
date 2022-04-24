@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome &#8212; Feature engineering &amp; selection</title>
+    <title>Mean decrease in impurity (MDI) &#8212; Feature engineering &amp; selection</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,10 +51,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Overview" href="feature-selection-overview.html" />
+    <link rel="next" title="Permutation feature importance" href="permutation-feature-importance.html" />
+    <link rel="prev" title="Feature selection with scikit-learn" href="feature-selection.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -92,8 +95,8 @@ const thebe_selector_output = ".output, .cell_output"
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
    Welcome
   </a>
  </li>
@@ -120,9 +123,9 @@ const thebe_selector_output = ".output, .cell_output"
   Feature importance
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="mdi.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Mean decrease in impurity (MDI)
   </a>
  </li>
@@ -184,7 +187,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/docs/mdi.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -204,7 +207,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://kirenz.github.io/feature-engineering//issues/new?title=Issue%20on%20page%20%2Fdocs/intro.html&body=Your%20issue%20content%20here."><button
+            href="https://kirenz.github.io/feature-engineering//issues/new?title=Issue%20on%20page%20%2Fdocs/mdi.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -232,7 +235,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Welcome</h1>
+                <h1>Mean decrease in impurity (MDI)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -243,21 +246,45 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="welcome">
-<h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this headline">¶</a></h1>
-<p>The goal of this book is to give you an overview about some important feature engineering tools and concepts when doing data science projects in Python.</p>
-<p>A typical data science project looks something like this:</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="../_images/lifecycle-data.png"><img alt="datascience" class="bg-primary mb-1 align-center" src="../_images/lifecycle-data.png" style="width: 600px;" /></a>
-<p>Here, we mainly cover the topics of feature engineering, feature selection and cross-validation.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="mean-decrease-in-impurity-mdi">
+<span id="section-mean-decrease"></span><h1>Mean decrease in impurity (MDI)<a class="headerlink" href="#mean-decrease-in-impurity-mdi" title="Permalink to this headline">¶</a></h1>
+<p>Mean decrease in impurity (MDI) is a measure of feature importance for decision tree models. They are computed as the mean and standard deviation of accumulation of the impurity decrease within each tree.</p>
+<p>Note that impurity-based importances are computed on training set statistics and therefore do not reflect the ability of feature to be useful to make predictions that generalize to the test set (when the model has enough capacity).</p>
+<p>Also note that impurity-based importances are biased towards high cardinality features (i.e., features with many unique values). See Permutation feature importance as an alternative below.</p>
+<p>Content: importance based feature selection; Forward selection and backward selection.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Feature selection  is the process of selecting a subset of relevant features (variables, predictors) for our model.</p>
+</div>
+<p>Supervised feature selection (also known as variable selection, attribute selection, variable subset selection and model subset selection) methods fall into three general classes <span id="id1">[<a class="reference internal" href="reference.html#id5" title="Max Kuhn and Kjell Johnson. Feature engineering and selection: A practical approach for predictive models. CRC Press, 2019. URL: http://www.feat.engineering/.">Kuhn and Johnson, 2019</a>]</span>:</p>
+<ol class="simple">
+<li><p>Embedded (or implicit) methods</p></li>
+<li><p>Filter methods</p></li>
+<li><p>Wrapper methods</p></li>
+</ol>
+<p><strong>Embedded methods</strong> perform feature selection during the modeling process (like regularization models or tree based models).</p>
+<p><strong>Filter methods</strong> conduct an analysis of the predictors to determine which are important and then only provide these to the model. E.g. based on statistical significance, correlation coefficent scores or feature importance based on magnitude of coefficients.</p>
+<p><strong>Wrapper methods</strong> use iterative search procedures that repeatedly supply predictor subsets to the model and then use the resulting model performance estimate to guide the selection of the next subset to evaluate. Typical performance measures are mean squared error, Mallow’s <span class="math notranslate nohighlight">\(C_P\)</span>, Akaike information criterion (AIC), Bayesian information criterion (BIC) (also called Schwarz information criterion SIC, SBC, SBIC) and adjusted <span class="math notranslate nohighlight">\(R^2\)</span>.</p>
+<p>An example of <a class="reference external" href="https://en.wikipedia.org/wiki/Greedy_algorithm">greedy</a> wrapper methods are forward and backward selection:</p>
+<ul class="simple">
+<li><p>Forward selection: That is, we start with 0 features and choose the best single feature with the highest score. The procedure is repeated until we reach the desired number of selected features.</p></li>
+<li><p>Backward selection: start with all the features and choose features to remove one by one.</p></li>
+</ul>
+<p>Examples of non-greedy wrapper methods are <a class="reference external" href="http://www.feat.engineering/genetic-algorithms.html">genetic algorithms (GA)</a> and <a class="reference external" href="http://www.feat.engineering/simulated-annealing.html">simulated annealing (SA)</a>.</p>
 <hr class="docutils" />
-<p>This online work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>.</p>
-<p><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a><br /></p>
-<p>This website is built with <a class="reference external" href="https://jupyterbook.org/intro.html">Jupyter Book</a>. <a target="_blank" href="https://icons8.de/icon/aL7NtSh6zELd/streudiagramm"> </a> Logo by <a target="_blank" href="https://icons8.de">Icons8</a></p>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
+<p>In the following Python notebook, we cover these methods to select features for a model:</p>
+<ul class="simple">
+<li><p>Embedded method: Lasso regression (L1 regularization)</p></li>
+<li><p>Filter method: Based on coefficient importance.</p></li>
+<li><p>Wrapper methods: Forward and backward selection.</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Resources</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://kirenz.github.io/regression/docs/feature-selection.html">Python notebook: feature selection methods</a></p></li>
+<li><p><a class="reference external" href="https://drive.google.com/file/d/154JFUOqukNgZThS_ql-ptATY4KEP3edR/view?usp=sharing">Download slides</a></p></li>
+<li><p>Literature: <a class="reference external" href="http://www.feat.engineering/selection.html">Kuhn, M. &amp; Johnson, K. (2019): Feature Engineering and Selection: A Practical Approach for Predictive Models.</a></p></li>
+</ul>
 </div>
 </div>
 
@@ -285,11 +312,18 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="feature-selection-overview.html" title="next page">
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="feature-selection.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Feature selection with scikit-learn</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="permutation-feature-importance.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Overview</p>
+        <p class="prev-next-title">Permutation feature importance</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
