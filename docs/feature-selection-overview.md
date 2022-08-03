@@ -15,7 +15,7 @@ Supervised feature selection (also known as variable selection, attribute select
 
 **Embedded methods** perform feature selection during the modeling process (like regularization models or tree based models). 
 
-**Filter methods** conduct an analysis of the predictors to determine which are important and then only provide these to the model. E.g. based on statistical significance, correlation coefficent scores or feature importance based on magnitude of coefficients.
+**Filter methods** conduct an analysis of the predictors to determine which are important and then only provide these to the model. E.g. based on statistical significance, correlation coefficient scores or feature importance based on magnitude of coefficients.
 
 **Wrapper methods** use iterative search procedures that repeatedly supply predictor subsets to the model and then use the resulting model performance estimate to guide the selection of the next subset to evaluate. Typical performance measures are mean squared error, Mallow's $C_P$, Akaike information criterion (AIC), Bayesian information criterion (BIC) (also called Schwarz information criterion SIC, SBC, SBIC) and adjusted $R^2$.
 
